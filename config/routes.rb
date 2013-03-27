@@ -1,5 +1,8 @@
-Nuu2hand::Application.routes.draw do
-  # The priority is based upon order of creation:
+Nuu2hand::Application.routes.draw do  # The priority is based upon order of creation:
+  root to: 'static_pages#home'
+
+  match '/about', to: 'static_pages#about'
+
   # first created -> highest priority.
 
   # Sample of regular route:
