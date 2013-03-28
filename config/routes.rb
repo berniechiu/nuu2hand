@@ -1,7 +1,12 @@
 Nuu2hand::Application.routes.draw do  # The priority is based upon order of creation:
+  
+  get 'users/new'
+
   root to: 'static_pages#home'
 
-  match '/about', to: 'static_pages#about'
+  match '/signup',  to: 'users#new'
+  match '/about',   to: 'static_pages#about'
+  match '/contact', to: 'static_pages#contact'
 
   # first created -> highest priority.
 
