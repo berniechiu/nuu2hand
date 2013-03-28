@@ -67,8 +67,11 @@ p {
 }
 
 /* Customize the navbar links to be fill the entire space of the .navbar */
-.navbar .navbar-inner {
-  padding: 0;
+
+.navbar {
+  .navbar-inner {
+    padding: 0;
+  }
   .nav {
     margin: 0;
     display: table;
