@@ -1,6 +1,6 @@
 Nuu2hand::Application.routes.draw do  # The priority is based upon order of creation:
   
-  get 'users/new'
+  resources :users
 
   root to: 'static_pages#home'
 
