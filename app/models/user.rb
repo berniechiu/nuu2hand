@@ -2,11 +2,13 @@
 #
 # Table name: users
 #
-#  id         :integer          not null, primary key
-#  school_id  :string(255)
-#  email      :string(255)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id              :integer          not null, primary key
+#  school_id       :string(255)
+#  email           :string(255)
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  password_digest :string(255)
+#  remember_token  :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -17,6 +19,8 @@ class User < ActiveRecord::Base
   	user.school_id = school_id.downcase
   	user.email = email.downcase
   end
+
+  before_save :create_remember_token
 
   VALID_SCHOOL_ID = /\A[a-z]\d{7}\z/i
   validates :school_id, presence: true, length: { is: 8 },
@@ -30,4 +34,10 @@ class User < ActiveRecord::Base
 
   validates :password, length: { minimum: 6 }
   validates :password_confirmation, presence: true
+  
+  private
+
+    def create_remember_token
+      self.remember_token = SecureRandom.urlsafe_base64
+    end
 end
