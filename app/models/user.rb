@@ -14,6 +14,7 @@
 class User < ActiveRecord::Base
   attr_accessible :school_id, :email, :password, :password_confirmation
   has_secure_password
+  has_many :books
 
   before_save do |user|
   	user.school_id = school_id.downcase
