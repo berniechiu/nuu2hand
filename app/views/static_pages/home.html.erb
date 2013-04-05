@@ -1,10 +1,23 @@
 <%= provide(:title, 'Home') %>
-<div class="center hero-unit">
-	<h1>Welcome to the NUU2HAND</h1>
+<% if signed_in? %>
+  <div class="row">
+  	<aside class="span4">
+  		<section>
+  			<%= render 'shared/user_info' %>
+  		</section>
+  		<section>
+  		  <%= render 'books/book_actions' %>
+  		</section>
+  	</aside>
+  </div>
+<% else %>
+	<div class="center hero-unit">
+		<h1>Welcome to the NUU2HAND</h1>
 
-	<h2>
-	  Home page for the open trading community.
-	</h2>
+		<h2>
+		  Home page for the open trading community.
+		</h2>
 
-	<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-success" %>
-</div>
+		<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-success" %>
+	</div>
+<% end %>

@@ -201,3 +201,33 @@ input, textarea, select, .uneditable-input {
     color: $grayLight;
   }
 }
+
+/* book actions */
+
+.actions {
+  width: 50%;
+
+  ul {
+    list-style: none;
+    margin: 0;
+
+    li {
+      padding: 10px 5px;
+      border-bottom: 1px solid #e8e8e8;
+
+      a {
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      &:first-child {
+        border-top: 1px solid #e8e8e8;
+      }
+      &:hover {
+        background-color: $grayLighter;
+      }
+    }
+  }
+}
