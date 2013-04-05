@@ -3,10 +3,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-  	user = User.find_by_school_id(params[:session][:school_id])
+  	user = User.find_by_school_id(params[:session][:school_id].downcase)
   	if user && user.authenticate(params[:session][:password])
   	  sign_in user
-  	  redirect_to user
+  	  redirect_back_or user
   	else
   	  flash.now[:error] = 'Invalid school ID/password combination'
   	  render 'new'
