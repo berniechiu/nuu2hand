@@ -1,0 +1,14 @@
+<%= form_for(@book) do |f| %>
+  <div class="field">
+
+  	<%= f.label :title, 'Title:' %>
+  	<%= f.text_field :title %>
+
+  	<%= f.label :condition %>
+  	<%= f.text_field :condition %>
+
+  	<%= f.label :notes %>
+  	<%= f.text_area :notes,  placeholder: "Additional info..." %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>
