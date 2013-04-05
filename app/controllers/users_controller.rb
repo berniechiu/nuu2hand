@@ -8,8 +8,8 @@ class UsersController < ApplicationController
   end
 
   def show
-  	@user = User.find_by_id(params[:id])
-    @books = @user.books.paginate(page: params[:page], per_page: 15)
+  	@user = User.find(params[:id])
+    @books = @user.books.paginate(page: params[:page], per_page: 10)
   end
 
   def index

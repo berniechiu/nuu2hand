@@ -3,7 +3,7 @@ class Book < ActiveRecord::Base
 
   belongs_to :user
 
-  validates :condition, presence: true, length: { maximum: 30 }
+  validates :condition, presence: true, length: { maximum: 50 }
   validates :notes, presence: true, length: { maximum: 140 }
   validates :title, presence: true, length: { maximum: 50 }
   validates :user_id, presence: true
