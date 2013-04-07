@@ -13,7 +13,7 @@ class BooksController < ApplicationController
   	@book = current_user.books.build(params[:book])
   	if @book.save
   	  flash[:success] = "Book posted!"
-  	  redirect_to root_path
+  	  redirect_to books_path
   	else
   	  render 'static_pages/home'
   	end
