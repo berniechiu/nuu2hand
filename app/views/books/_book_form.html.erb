@@ -1,14 +1,16 @@
-<%= form_for(@book) do |f| %>
+<%= form_for @book, html: { multipart: true } do |f| %>
   <div class="field">
 
   	<%= f.label :title, 'Title:' %>
   	<%= f.text_field :title %>
 
-  	<%= f.label :condition %>
+  	<%= f.label :condition, 'Condition:' %>
   	<%= f.text_field :condition %>
 
-  	<%= f.label :notes %>
+  	<%= f.label :notes, "Description:" %>
   	<%= f.text_area :notes,  placeholder: "Additional info..." %>
+
+  	<%= f.file_field :photo %>
   </div>
   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>

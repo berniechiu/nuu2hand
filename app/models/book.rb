@@ -1,7 +1,8 @@
 class Book < ActiveRecord::Base
-  attr_accessible :condition, :notes, :title
+  attr_accessible :condition, :notes, :title, :photo
 
   belongs_to :user
+  has_attached_file :photo
 
   validates :condition, presence: true, length: { maximum: 50 }
   validates :notes, presence: true, length: { maximum: 140 }

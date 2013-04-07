@@ -189,7 +189,7 @@ input, textarea, select, .uneditable-input {
   margin: 10px 0 0 0;
 
   li {
-    padding: 10px 0;
+    padding: 25px 0;
     border-top: 1px solid #e8e8e8;
   }
 
@@ -229,5 +229,17 @@ input, textarea, select, .uneditable-input {
         background-color: $grayLighter;
       }
     }
+  }
+}
+
+/* image thumbnail */
+
+.thumb {
+
+  img {
+    float: left;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
   }
 }
