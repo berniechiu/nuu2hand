@@ -10,6 +10,7 @@ class Book < ActiveRecord::Base
   validates :notes, presence: true, length: { maximum: 140 }
   validates :title, presence: true, length: { maximum: 50 }
   validates :user_id, presence: true
+  validates_attachment_presence :photo
 
   default_scope order: 'books.created_at DESC'
 end

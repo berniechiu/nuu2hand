@@ -15,7 +15,7 @@ class BooksController < ApplicationController
   	  flash[:success] = "Book posted!"
   	  redirect_to books_path
   	else
-  	  render 'static_pages/home'
+  	  render 'new'
   	end
   end
 
