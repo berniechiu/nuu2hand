@@ -2,7 +2,8 @@ Nuu2hand::Application.routes.draw do  # The priority is based upon order of crea
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :books, only: [:index, :new, :create, :destroy]
+  resources :books, only: [:index, :new, :create,
+                           :edit, :update, :destroy]
 
   root to: 'static_pages#home'
 

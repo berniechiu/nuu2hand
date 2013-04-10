@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_filter :signed_in_user, only: [:create, :destroy]
-  before_filter :correct_user, only: :destroy
+  before_filter :correct_user, only: [:edit, :update, :destroy]
 
   def index
   	@books = Book.paginate(page: params[:page], per_page: 10)
@@ -18,6 +18,18 @@ class BooksController < ApplicationController
   	else
   	  render 'new'
   	end
+  end
+
+  def edit  
+  end
+
+  def update
+    if @book.update_attributes(params[:book])
+      flash[:success] = "Book information updated"
+      redirect_to books_path
+    else 
+      render 'edit'
+    end
   end
 
   def destroy

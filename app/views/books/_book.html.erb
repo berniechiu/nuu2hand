@@ -5,6 +5,7 @@
   	Posted <%= time_ago_in_words(book.created_at) %> ago.
   </span>
   <% if current_user?(book.user) %>
+  	<%= link_to "edit", edit_book_path(book) %> | 
   	<%= link_to "delete", book, method: :delete,
   								confirm: "You sure?" %>
   <% end %>

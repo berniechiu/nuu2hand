@@ -10,7 +10,12 @@
       </section>
     </aside>
     <div class="span7">
-      <%= render 'book_form' %>
+    <%= form_for @book, html: { multipart: true } do |f| %>
+      <div class="field">
+      <%= render 'book_form', f: f%>
+      </div>
+      <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+    <% end %>
     </div>
   </div>
 <% else %>

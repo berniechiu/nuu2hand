@@ -1,17 +1,12 @@
-<%= form_for @book, html: { multipart: true } do |f| %>
-  <div class="field">
-    <%= render 'shared/error_messages', object: f.object %>
+<%= render 'shared/error_messages', object: f.object %>
 
-  	<%= f.label :title, 'Title:' %>
-  	<%= f.text_field :title %>
+<%= f.label :title, 'Title:' %>
+<%= f.text_field :title %>
 
-  	<%= f.label :condition, 'Condition:' %>
-  	<%= f.text_field :condition %>
+<%= f.label :condition, 'Condition:' %>
+<%= f.text_field :condition %>
 
-  	<%= f.label :notes, "Description:" %>
-  	<%= f.text_area :notes,  placeholder: "Additional info..." %>
+<%= f.label :notes, "Description:" %>
+<%= f.text_area :notes,  placeholder: "Additional info..." %>
 
-  	<%= f.file_field :photo %>
-  </div>
-  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
-<% end %>
+<%= f.file_field :photo %>
