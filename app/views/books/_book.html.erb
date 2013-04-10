@@ -4,4 +4,8 @@
   <span class="timestamp">
   	Posted <%= time_ago_in_words(book.created_at) %> ago.
   </span>
+  <% if current_user?(book.user) %>
+  	<%= link_to "delete", book, method: :delete,
+  								confirm: "You sure?" %>
+  <% end %>
 </li>
