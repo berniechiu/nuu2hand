@@ -1,4 +1,5 @@
-<%= provide(:title, 'Home') %>
+<%= provide(:title, "Book") %>
+
 <% if signed_in? %>
   <div class="row">
   	<aside class="span4">
@@ -9,11 +10,8 @@
   		  <%= render 'books/book_actions' %>
   		</section>
   	</aside>
-    <div class="span8">
-      <ol class="books">
-        <%= render @books %>
-      </ol>
-      <%= will_paginate @books %>
+    <div class="span8 book-page">
+    	<%= render 'book_page' %>
     </div>
   </div>
 <% else %>
