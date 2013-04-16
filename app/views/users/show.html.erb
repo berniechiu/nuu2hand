@@ -15,6 +15,10 @@
   	    <%= render @books %>
   	  </ol>
   	  <%= will_paginate @books %>
+    <% else %>
+      <h3>No books! Try add some here!</h3>
+      <hr />
+      <%= link_to "Add new book", new_book_path %>
   	<% end %>
   </div>
 </div>
