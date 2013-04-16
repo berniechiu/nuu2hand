@@ -13,4 +13,12 @@ class Book < ActiveRecord::Base
   validates_attachment_presence :photo
 
   default_scope order: 'books.created_at DESC'
+
+  def self.search(search)
+    if search
+      where('title LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
 end
