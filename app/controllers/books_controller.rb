@@ -2,10 +2,6 @@ class BooksController < ApplicationController
   before_filter :signed_in_user, only: [:create, :destroy]
   before_filter :correct_user, only: [:edit, :update, :destroy]
 
-  def index
-  	@books = Book.paginate(page: params[:page], per_page: 10)
-  end
-
   def show
     @book = Book.find_by_id(params[:id])
   end
@@ -18,7 +14,7 @@ class BooksController < ApplicationController
   	@book = current_user.books.build(params[:book]) if signed_in?
   	if @book.save
   	  flash[:success] = "Book posted!"
-  	  redirect_to books_path
+  	  redirect_to root_path
   	else
   	  render 'new'
   	end
@@ -30,7 +26,7 @@ class BooksController < ApplicationController
   def update
     if @book.update_attributes(params[:book])
       flash[:success] = "Book information updated"
-      redirect_to books_path
+      redirect_to root_path
     else 
       render 'edit'
     end
