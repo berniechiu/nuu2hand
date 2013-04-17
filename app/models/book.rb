@@ -1,6 +1,7 @@
 class Book < ActiveRecord::Base
   attr_accessible :condition, :notes, :title, :photo
 
+  has_many :comments, dependent: :destroy
   belongs_to :user
   has_attached_file :photo,
   	url:  "/assets/books/:id/:style/:basename.:extension",
