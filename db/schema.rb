@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130407043923) do
+ActiveRecord::Schema.define(:version => 20130417034024) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130407043923) do
     t.datetime "photo_updated_at"
   end
 
+  add_index "books", ["title"], :name => "index_books_on_title"
   add_index "books", ["user_id", "created_at"], :name => "index_books_on_user_id_and_created_at"
 
   create_table "users", :force => true do |t|
