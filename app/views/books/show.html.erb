@@ -11,7 +11,20 @@
   		</section>
   	</aside>
     <div class="span8 book-page">
-    	<%= render 'book_page' %>
+      <section>
+    	  <%= render 'book_page' %>
+      </section>
+      <section>
+        <%= render 'shared/comment_form' %>
+      </section>
+      <section>
+        <% if @book.comments.any? %>
+        <ol class="comments">
+          <%= render @comments %>
+        </ol>
+        <%= will_paginate @comments %>
+        <% end %>
+      </section>
     </div>
   </div>
 <% else %>
