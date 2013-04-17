@@ -11,7 +11,7 @@
     </aside>
     <div class="span7">
     <%= form_for @book, html: { multipart: true } do |f| %>
-      <div class="field">
+      <div>
       <%= render 'book_form', f: f%>
       </div>
       <%= f.submit "Post", class: "btn btn-large btn-primary" %>

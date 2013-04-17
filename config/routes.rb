@@ -2,7 +2,9 @@ Nuu2hand::Application.routes.draw do  # The priority is based upon order of crea
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :books
+  resources :books do
+    resources :comments, only: [:create, :destroy]
+  end
 
   root to: 'static_pages#home'
 
