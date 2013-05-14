@@ -1,19 +1,19 @@
 <% provide(:title, 'Sign in') %>
-<h1>Sign in</h1>
+<h1>登入</h1>
 
 <div class="row">
   <div class="span4 offset4">
   	<%= form_for(:session, url: sessions_path) do |f| %>
 
-  	  <%= f.label :school_id, 'School ID' %>
+  	  <%= f.label :school_id, '學號' %>
   	  <%= f.text_field :school_id %>
 
-  	  <%= f.label :password %>
+  	  <%= f.label :password, '密碼' %>
   	  <%= f.password_field :password %>
 
-  	  <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+  	  <%= f.submit "登入", class: "btn btn-large btn-primary" %>
   	<% end %>
 
-  	<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  	<p>新的使用者? <%= link_to "馬上註冊!", signup_path %></p>
   </div>
 </div>

@@ -1,12 +1,12 @@
 <%= render 'shared/error_messages', object: f.object %>
 
-<%= f.label :title, 'Title:' %>
+<%= f.label :title, '標題:' %>
 <%= f.text_field :title %>
 
-<%= f.label :condition, 'Condition:' %>
+<%= f.label :condition, '狀況:' %>
 <%= f.text_field :condition %>
 
-<%= f.label :notes, "Description:" %>
+<%= f.label :notes, "描述:" %>
 <%= f.text_area :notes,  placeholder: "Additional info..." %>
 
 <%= f.file_field :photo %>

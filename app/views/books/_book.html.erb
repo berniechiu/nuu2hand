@@ -2,11 +2,11 @@
   <span class="thumb"><%= image_tag book.photo.url %></span>
   <span class="title"><%= link_to book.title, book %></span>
   <span class="timestamp">
-  	Posted <%= time_ago_in_words(book.created_at) %> ago.
+  	張貼在 <%= time_ago_in_words(book.created_at) %> 之前.
   </span>
   <% if current_user?(book.user) %>
-  	<%= link_to "edit", edit_book_path(book) %> | 
-  	<%= link_to "delete", book, method: :delete,
-  								confirm: "You sure?" %>
+  	<%= link_to "編輯", edit_book_path(book) %> | 
+  	<%= link_to "刪除", book, method: :delete,
+  								confirm: "確定?" %>
   <% end %>
 </li>

@@ -5,10 +5,10 @@
   </span>
   <span class="content"><%= comment.content %></span>
   <span class="timestamp">
-  	<%= link_to comment.user.school_id.upcase, comment.user %> Posted 
-    <%= time_ago_in_words(comment.created_at) %> ago.
+  	<%= link_to comment.user.school_id.upcase, comment.user %> 張貼在 
+    <%= time_ago_in_words(comment.created_at) %> 之前.
   </span>
   <% if current_user?(comment.user) %>
-    <%= link_to "DELETE", [@book, comment], method: :delete, remote: true %>
+    <%= link_to "刪除", [@book, comment], method: :delete, remote: true %>
   <% end %>
 </li>
