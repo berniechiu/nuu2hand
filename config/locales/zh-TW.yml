@@ -197,3 +197,21 @@ zh-TW:
   activerecord:
     errors:
       <<: *errors
+  activerecord:
+    attributes:
+      user:
+        password_digest: "密碼"
+        school_id: "學號"
+        email: "信箱"
+        password: "密碼"
+        password_confirmation: "確認密碼"
+      book:
+        title: "標題"
+        condition: "狀況"
+        notes: "描述"
+        photo: "圖片"
+  will_paginate:
+    previous_label:
+      "上一頁"
+    next_label:
+      "下一頁"
