@@ -1,2 +1,5 @@
-$(".comments").html("<%= escape_javascript(render(:partial => @book.comments)) %>");
+$(".comments").html("<%= escape_javascript(render(:partial => @book.comments)) %>")
+              .hide()
+              .fadeIn('slow');
+
 $(".field textarea").val('')
